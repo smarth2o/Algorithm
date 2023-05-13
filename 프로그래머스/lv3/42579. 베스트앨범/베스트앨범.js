@@ -1,11 +1,8 @@
 function solution(genres, plays) {
     let songs = {};
-    
-    for (let genre of [...new Set(genres)]) {
-        songs[genre] = [];
-    }
     for (let i=0; i < genres.length; i++) {
-        songs[genres[i]].push(plays[i]);
+        if (songs[genres[i]]) songs[genres[i]].push(plays[i]);
+        else songs[genres[i]] = [plays[i]];
     }
     
     Object.values(songs).forEach(v => v.sort((a,b) => b-a));
