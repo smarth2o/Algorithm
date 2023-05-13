@@ -16,6 +16,7 @@ function solution(genres, plays) {
         answer.push(plays.indexOf(v[0]));
         // 장르에 속한 곡이 하나라면, 하나의 곡만 선택
         if (plays.indexOf(v[1]) >= 0) {
+            // 장르 내에서 재생 횟수가 같은 노래 중에서는 고유 번호가 낮은 노래를 먼저 수록
             if (v[0]===v[1]) answer.push(plays.indexOf(v[1], answer.at(-1)+1));
             else answer.push(plays.indexOf(v[1]));
         }
