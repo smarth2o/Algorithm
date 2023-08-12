@@ -3,10 +3,8 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Solution {
-
-    static int combCnt;
     public static void main(String[] args) throws Exception {
-
+        
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         int tc = Integer.parseInt(in.readLine());
         StringTokenizer st;
@@ -22,14 +20,17 @@ public class Solution {
                 }
             }
 
+            // 조합 계산하기
             int[] p = new int[N];
             int cnt = 0;
             while(++cnt<=N/2) p[N-cnt] = 1;
 
+            int[] a, b;
             int diff = Integer.MAX_VALUE;
             do {
-                int[] a = new int[N/2];
-                int[] b = new int[N/2];
+                // 식재료 나누기
+                a = new int[N/2];
+                b = new int[N/2];
                 int aIdx = 0;
                 int bIdx = 0;
                 for(int i=0; i<N; i++) {
@@ -40,6 +41,7 @@ public class Solution {
                     }
                 }
 
+                // 시너지의 합 구하기
                 int aCnt = 0;
                 int bCnt = 0;
                 for(int i=0; i<N/2-1; i++) {
@@ -49,6 +51,7 @@ public class Solution {
                     }
                 }
 
+                // 맛 차이 구하기
                 int temp = Math.abs(aCnt - bCnt);
                 if (temp < diff) {
                     diff = temp;
@@ -77,7 +80,6 @@ public class Solution {
 		while(i<k) {
 			swap(p, i++, k--);
 		}
-        combCnt--;
 		return true;
 	}
 	
