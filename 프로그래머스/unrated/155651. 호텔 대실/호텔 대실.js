@@ -5,9 +5,10 @@ function toTime(time) {
 
 function solution(book_time) {
 
+    // 시작 시간 기준으로 정렬
     book_time.sort((a, b) => toTime(a[0]) - toTime(b[0]));
-    let rooms = [];
     
+    let rooms = [];
     for (const time of book_time) {
         let reserved = false;
         
