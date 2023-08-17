@@ -3,7 +3,6 @@ import java.io.InputStreamReader;
 
 public class Main {
     static int N;
-    static String num;
     static StringBuilder sb;
     public static void main(String[] args) throws Exception {
         
@@ -22,6 +21,7 @@ public class Main {
         for(int i=2; i*i<=x; i++) {
             if (x % i == 0) return;
         }
+        
         if (Integer.toString(x).length() == N) {
             sb.append(Integer.toString(x)).append('\n');
             return;
