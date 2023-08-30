@@ -19,12 +19,10 @@ public class Solution {
             int result = 0;
             if(V==1) {
                 result += (n.length()-1);
-            } else if(v.charAt(1)=='1') {
-                result += (v.length()-1) + (n.length()-1);
-            } else if(n.charAt(1)=='1') {
-                result += (v.length()-1) + (n.length()-1);
-            } else {
+            } else if(v.charAt(1)=='0' && n.charAt(1)=='0') {
                 result += (v.length()-1) + (n.length()-2);
+            } else {
+                result += (v.length()-1) + (n.length()-1);
             }
         
             sb.append("#"+tc+" "+result+"\n");
